@@ -1,0 +1,43 @@
+﻿@model Senai.LanHouse.Web.Razor.Dominios.Defeito
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Defeito</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDefeito)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataDefeito)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Equipamento.EquipamentoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDefeito)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoDefeito.Titulo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DefeitoId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

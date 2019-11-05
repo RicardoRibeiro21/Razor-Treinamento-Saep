@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Senai.LanHouse.Web.Razor.Dominios.Defeito>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDefeito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDefeito)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDefeito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipamento.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDefeito.Titulo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DefeitoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DefeitoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DefeitoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
